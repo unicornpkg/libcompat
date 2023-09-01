@@ -35,7 +35,6 @@ elseif is_recrafted() then
   for name, func in pairs(require("rc")) do
     std.os[name] = func
   end
-  std.os.loadAPI = unsupported_function("os.loadAPI")
 elseif is_other() then
   error("Unsupported system detected.")
 else
