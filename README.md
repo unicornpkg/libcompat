@@ -1,5 +1,5 @@
 # libcompat
-Compatibility library that provides a standard CraftOS-compatibile library (`stdlib`) on different systems such as Phoenix and Recrafted.
+Compatibility library that provides a standard CraftOS-compatible library (`stdlib`) on different systems such as Phoenix and Recrafted.
 
 ## Usage
 ```lua
