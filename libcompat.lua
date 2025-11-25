@@ -4,6 +4,11 @@ local function fake_loadapi(_)
   error("os.loadAPI and os.unloadAPI were specifically omitted from libcompat due to various issues. Please use require() instead.")
 end
 
+local function fake_fs_combine(...)
+  local pl = require("pl") -- Penlight: https://stevedonovan.github.io/Penlight/api/libraries/pl.path.html#join
+  return pl.join(...)
+end
+
 local function is_recrafted()
   if pcall(require, "rc") then
     return true
@@ -43,5 +48,9 @@ end
 
 std.os.loadAPI = fake_loadapi
 std.os.unloadAPI = fake_loadapi
+
+if not std.fs.combine then
+  fs.combine = fake_fs_combine
+end
 
 return std
